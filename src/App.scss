@@ -1,6 +1,8 @@
-// variables
-$color-1: #1f3459;
-$color-2: #21314e;
+@import "./variables";
+.nav {
+  color: white;
+  background-color: $color-1;
+}
 .container {
   color: white;
   display: flex;
@@ -15,4 +17,37 @@ $color-2: #21314e;
 .column-right {
   width: 75%;
   height: 80vh;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.btn {
+  margin: $space;
+  border: 1px solid $color-3;
+  border-radius: 4px 4px 4px 4px;
+  color: $color-2;
+  background-color: $white;
+  font-size: $font-size-h5;
+  font-weight: bold;
+  padding: 0.5 * $space $space;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: $white;
+    background-color: $color-2;
+  }
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+  &:hover {
+    color: $color-2;
+    background-color: $white;
+  }
 }

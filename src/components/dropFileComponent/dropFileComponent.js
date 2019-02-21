@@ -4,9 +4,6 @@ import CsvParse from "@vtex/react-csv-parse";
 import "./dropFileComponent.scss";
 
 class DropFileComponent extends React.Component {
-  //   handleData = data => {
-  //     this.setState({ data });
-  //   };
   render() {
     const keys = [
       "cdatetime",

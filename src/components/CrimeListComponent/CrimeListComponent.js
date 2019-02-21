@@ -2,43 +2,24 @@ import React from "react";
 import "./crimeListComponent.scss";
 
 import InfiniteScroll from "react-infinite-scroll-component";
-import CrimeService from "../../crimeServices/crimeServices";
+// import CrimeService from "../../crimeServices/crimeServices";
 
-let crimes = CrimeService.getCrimes();
-
-// let fakeArr = [];
-// for (let i = 0; i < 20; i++) {
-//   fakeArr.push({
-//     id: i,
-//     cdatetime: "",
-//     address: "",
-//     district: Number,
-//     beat: "",
-//     grid: Number,
-//     crimedescr: "",
-//     ucr_ncic_code: Number,
-//     latitude: Number,
-//     longitude: Number
-//   });
-// }
-
-// let crimes = fakeArr;
+// let crimes = CrimeService.getCrimes();
 
 class CrimeListPage extends React.Component {
   state = {
-    items: Array.from({ length: 3 }, i => crimes)
+    items: Array.from({ length: 20 }, i => this.props.crimesListFromCSV.state)
   };
 
   fetchMoreData = () => {
     this.setState({
       items: this.state.items.concat(
-        Array.from({ length: 20 }, i => this.props.crimesListFromCSV)
+        Array.from({ length: 20 }, i => this.props.crimesListFromCSV.state)
       )
     });
   };
 
   render() {
-    console.log(this.props.crimesListFromCSV);
     return (
       <div className="column-element">
         <div id="scrollableDiv" className="scrollableDiv">
@@ -54,18 +35,18 @@ class CrimeListPage extends React.Component {
                 <tbody className="tbody">
                   {this.state.items.map((item, index) => (
                     <tr
-                      className={item[index].id % 2 ? "light" : "dark"}
+                      className={[index] % 2 ? "light" : "dark"}
                       onClick={() =>
                         this.props.handleChangeGeo(
-                          item[index].latitude,
-                          item[index].longitude,
+                          item[index].lat,
+                          item[index].lng,
                           item[index].cdatetime,
                           item[index].address,
                           item[index].district,
                           item[index].crimedescr
                         )
                       }
-                      key={item[index].id}
+                      key={[index]}
                     >
                       <td>
                         <p>cdatetime: {item[index].cdatetime}</p>

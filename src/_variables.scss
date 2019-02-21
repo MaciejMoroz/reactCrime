@@ -1,3 +1,20 @@
-// variables
 $color-1: #1f3459;
 $color-2: #21314e;
+$color-3: #cdd0d7;
+$color-4: #7a217f;
+
+$white: #fff;
+$black: #000;
+
+$base-unit: 1rem; //16px
+$space: 2 * $base-unit; // 32px
+
+$font-size-base: $base-unit;
+$font-size-body: $font-size-base;
+$font-size-body2: $font-size-base * 0.75;
+$font-size-h1: $font-size-base * 2.25; //36
+$font-size-h2: $font-size-base * 2; //32
+$font-size-h3: $font-size-base * 1.25; //20
+$font-size-h4: $font-size-base * 1; // 16
+$font-size-h5: $font-size-base * 0.75; // 12
+$font-size-h6: $font-size-base * 0.62; //10

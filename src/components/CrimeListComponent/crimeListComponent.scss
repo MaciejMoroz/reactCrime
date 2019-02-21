@@ -1,3 +1,13 @@
+@import "../../variables";
+
+$color-1: #1f3459;
+$color-2: #21314e;
+$color-3: #cdd0d7;
+$color-4: #7a217f;
+
+$white: #fff;
+$black: #000;
+
 .crimeTable {
   font-size: 12px;
   width: 100%;
@@ -6,6 +16,14 @@
 td {
   padding: 5px;
   margin-bottom: 10px;
+  &:hover {
+    color: $color-2;
+    background-color: $color-3;
+    cursor: pointer;
+  }
+  p {
+    padding: 5px;
+  }
 }
 
 .scrollableDiv {

@@ -9,6 +9,7 @@ class MapComponent extends React.Component {
 
   render() {
     let defaultCenter = { lat: 38.55042047, lng: -121.3914158 };
+
     return (
       <div>
         <div style={{ height: "80vh", width: "100%" }}>

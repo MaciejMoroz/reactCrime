@@ -7,9 +7,17 @@ class HomePage extends React.Component {
     dataFile: ""
   };
 
-  handleData = dataFile => {
-    this.setState({ dataFile });
+  handleData = inputFile => {
+    this.setState({
+      dataFile: inputFile,
+      fileStatus: true
+    });
   };
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.dataFile !== prevState.dataFile) {
+      this.props.onUserUploadFile(this.state.dataFile);
+    }
+  }
 
   render() {
     const keys = [
@@ -28,15 +36,12 @@ class HomePage extends React.Component {
       <div className="homePage">
         <div className="dropZone">
           <CsvParse
+            className="cos"
             keys={keys}
-            onDataUploaded={() =>
-              this.props.handleUploadData(this.state.dataFile)
-            }
+            onDataUploaded={this.handleData}
             onError={this.handleError}
             render={onChange => <input type="file" onChange={onChange} />}
           />
-
-          {console.log(this.state)}
         </div>
       </div>
     );
