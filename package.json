@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@vtex/react-csv-parse": "^3.0.2",
+    "csvtojson": "^2.0.8",
+    "google-map-react": "^1.1.2",
+    "node-sass": "^4.11.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-dropzone": "^8.1.0",
+    "react-infinite-scroll-component": "^4.5.0",
+    "react-list": "^0.8.11",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
   "scripts": {

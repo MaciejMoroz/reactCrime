@@ -1,0 +1,18 @@
+// variables
+$color-1: #1f3459;
+$color-2: #21314e;
+.container {
+  color: white;
+  display: flex;
+  background-color: $color-1;
+}
+.column-left {
+  width: 25%;
+  height: 80vh;
+  min-width: 235px;
+}
+
+.column-right {
+  width: 75%;
+  height: 80vh;
+}
