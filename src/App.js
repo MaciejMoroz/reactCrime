@@ -15,7 +15,6 @@ class App extends Component {
       isActive: true,
       dataFile: ""
     };
-    console.log(this.state);
   }
   onUserUploadFile = uploadFile => {
     this.setState({
@@ -25,7 +24,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <div className="nav">

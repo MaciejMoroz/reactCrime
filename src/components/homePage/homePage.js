@@ -1,10 +1,12 @@
 import React from "react";
 import CsvParse from "@vtex/react-csv-parse";
 import "./homePage.scss";
+import InputDrop from "./input.js";
 
 class HomePage extends React.Component {
   state = {
-    dataFile: ""
+    dataFile: "",
+    fileStatus: false
   };
 
   handleData = inputFile => {
@@ -14,7 +16,10 @@ class HomePage extends React.Component {
     });
   };
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.dataFile !== prevState.dataFile) {
+    if (
+      this.state.dataFile !== prevState.dataFile &&
+      this.state.dataFile !== prevProps
+    ) {
       this.props.onUserUploadFile(this.state.dataFile);
     }
   }
@@ -34,15 +39,18 @@ class HomePage extends React.Component {
 
     return (
       <div className="homePage">
-        <div className="dropZone">
-          <CsvParse
-            className="cos"
-            keys={keys}
-            onDataUploaded={this.handleData}
-            onError={this.handleError}
-            render={onChange => <input type="file" onChange={onChange} />}
-          />
-        </div>
+        <CsvParse
+          keys={keys}
+          onDataUploaded={this.handleData}
+          onError={this.handleError}
+          render={onChange => (
+            <InputDrop
+              onChange={onChange}
+              onDrop={onChange}
+              isUploaded={this.state.fileStatus}
+            />
+          )}
+        />
       </div>
     );
   }
