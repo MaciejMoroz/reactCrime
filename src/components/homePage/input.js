@@ -21,7 +21,8 @@ class InputDrop extends React.Component {
           onDrop={this.onInputRefDrop}
         >
           <p hidden={this.props.isUploaded === false ? false : true}>
-            Drop File here or click to select files to upload
+            {/* Drop File here or  */}
+            Click to select file
           </p>
           <p hidden={this.props.isUploaded === false ? true : false}>
             fille uploaded
