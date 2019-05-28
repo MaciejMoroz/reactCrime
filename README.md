@@ -1,3 +1,6 @@
+Build React App where you can upload crime records as CSV, build a table from it and present single crime on a map (csv file in ./src/data/SacramentocrimeJanuary2006.csv
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
